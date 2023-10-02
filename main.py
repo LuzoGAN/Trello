@@ -36,7 +36,7 @@ if __name__ == '__main__':
         page.title = 'Trello Verde'
         page.padding = 0
         page.bgcolor = colors.BLUE_GREY_200
-        app = TrelloAPP(page)
+        app = TrelloApp(page)
         page.add(app)
         page.update()
 

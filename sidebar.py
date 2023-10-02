@@ -34,7 +34,34 @@ class Sidebar(UserControl):
         self.view = Container(
             content=Column([
                 Row([
-                    Text("Workspace")
-                ])
-            ])
+                    Text("Workspace"),
+                ]),
+
+                Container(
+                    bgcolor=colors.BLACK26,
+                    border_radius=border_radius.all(30),
+                    height=-1,
+                    alignment=alignment.center_right,
+                    width=220
+                ),
+                self.top_nav_rail,
+
+
+                Container(
+                    bgcolor=colors.BLACK26,
+                    border_radius=border_radius.all(30),
+                    height=-1,
+                    alignment=alignment.center_right,
+                    width=220
+                ),
+            ], tight=True),
+            padding=padding.all(15),
+            margin=margin.all(0),
+            width=250,
+            bgcolor=colors.BLUE_GREY,
         )
+        return self.view
+
+    def top_nav_change(self, e):
+        self.top_nav_rail.selected_index = e.control.selected_index
+        self.update()
